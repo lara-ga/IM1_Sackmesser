@@ -1,0 +1,124 @@
+@font-face {
+    font-family: "Bitcount";
+    src: url("../fonts/BitcountGridSingle-VariableFont_CRSV,ELSH,ELXP,slnt,wght.woff2") format("woff2");
+}
+
+:root {
+    --color-primary: #C8102E;
+    --color-secondary: #;
+    --color-light: #;
+    --background-light: #F4F4F6;
+    --header-light: #1C1C1C;
+    --header-text-color: #FFFFFF;
+    --footer-light: #C8102E;
+    --footer-text-color: #FFFFFF;
+    --text-color-light: #1C1C1C;
+    --titel-font: "Helvetica Neue", sans serif;
+    --paragraph-font: "Helvetica Neue", sans serif;
+    --global-max-width:1200px;
+}
+
+[data-theme="dark"] {
+
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: var(--background-light);
+}
+
+header {
+    background-color: var(--header-light);
+}
+
+.hauptnav {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+    padding: 20px;
+    max-width: var(--global-max-width);
+    margin: auto;
+
+    img {
+        width: 50px;
+    }
+
+    ul {
+        list-style: none;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        gap: 20px;
+    }
+}
+h1, h2, h3, h4, h5, h6 {
+    font-family: var(--titel-font);
+    color: var(--text-color-light);
+}
+
+h1 {
+    font-size: 2rem;
+}
+
+h2 {
+    font-size: 1.5rem;
+}
+
+h3 {
+    font-size: 1.2rem;
+}
+
+h4 {
+    font-size: 1rem;
+}
+
+p {
+    font-family: var(--paragraph-font);
+    color: var(--text-color-light);
+}
+
+
+main {
+    background-color: var(--background-light);
+    max-width: var(--global-max-width);
+    margin: 0 auto;
+    h2  {
+        font-family: var(--paragraph-font);
+        color: var(--text-color-light);
+
+    }
+
+    h3  {
+        font-family: var(--paragraph-font);
+        color: var(--text-color-light);
+
+    }
+
+    p {
+        font-family: var(--paragraph-font);
+        color: var(--text-color-light);
+    }
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+footer {
+    background-color: var(--footer-light);
+    padding: 20px 0;
+
+    .footer-content {
+        display: flex;
+        justify-content: space-between;
+        max-width: var(--global-max-width);
+        margin: 0 auto;
+    }
+}
