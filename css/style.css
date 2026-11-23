@@ -1,23 +1,33 @@
-@font-face {
-    font-family: "Helvetica Neue";
-    src: url("../fonts/BitcountGridSingle-VariableFont_CRSV,ELSH,ELXP,slnt,wght.woff2") format("woff2");
+@font-face { /*Header-Font*/
+    font-family: "Schibsted Grotesk";
+    src: url("../fonts/SchibstedGrotesk-VariableFont_wght.ttf");
+    font-weight: 400 900; /*Variable Font*/
+}
+
+@font-face { /*Fliesstext Font*/
+    font-family: "IBM Plex Sans";
+    src: url("../fonts/IBMPlexSans-VariableFont_wdth_wght.ttf");
+    font-weight: 100 700; /*Variable Font*/
 }
 
 :root {
     /*Farben*/
     --color-primary: #C8102E;
-    --color-secondary: #;
-    --color-light: #;
+    --color-primary-hover: #8A0C20;
+    --color-primary-contrast: #FFFFFF;
     --background-light: #F4F4F6;
+    --background-dark: #121417;
     --header-light: #1C1C1C;
     --header-text-color: #FFFFFF;
     --footer-light: #C8102E;
     --footer-text-color: #FFFFFF;
     --text-color-light: #1C1C1C;
+    --text-color-dark: #F4F4F6;
+    --text-color-muted: #71717A;
 
     /*Schriften*/
-    --titel-font: "Helvetica Neue", "Inter" sans-serif;
-    --paragraph-font: "Helvetica Neue", "Inter" sans-serif;
+    --titel-font: "Schibsted Grotesk", "Inter", sans-serif;
+    --paragraph-font: "IBM Plex Sans", "Inter", sans-serif;
 
     /*Layout Breite*/
     --global-max-width:1200px;
@@ -30,6 +40,12 @@
 * {
     margin: 0;
     padding: 0;
+}
+
+.container {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
 }
 
 body {
@@ -49,9 +65,10 @@ header {
     padding: 20px;
     max-width: var(--global-max-width);
     margin: auto;
+    font-family: var(--titel-font);
 
     img {
-        width: 50px;
+        width: 100px;
         /* transform: rotate(90deg);  Logo um 90 Grad drehen*/
     }
 
@@ -64,6 +81,40 @@ header {
     }
 }
 
+.hero-section {
+    width: 100%;
+    padding: 60px 20px;
+    overflow: hidden; /* Verhindert horizontales Scrollen bei grossen Screens */
+
+    .hero-container {
+        max-width: var(--global-max-width);
+        margin: 0 auto;
+        display: flex;
+        align-items: center; /* Vertikal zentriert */
+        justify-content: space-between;
+    }
+
+    .hero-text {
+        flex: 1;
+        z-index: 1;
+        display: block;
+        margin-bottom: 0.5rem;
+    }
+
+    .hero-image {
+        flex 1;
+        z-index: 2;
+        margin-left: -120px;
+    }
+
+    .hero-image img {
+        width: 100%;
+        max-width: 600px;
+        height: auto;
+        display: block;
+    }
+}
+
 /*Schriften definieren*/
 h1, h2, h3, h4, h5, h6 {
     font-family: var(--titel-font);
@@ -71,8 +122,10 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 h1 {
-    font-size: 64px;
-    font-weight: 700; /*Bold*/
+    font-size: 120px;
+    font-weight: 900; /*Black*/
+    text-transform: uppercase; /*alles in CAPS*/
+    line-height: 0.9; /*Zeilenabstand*/
 }
 
 h2 {
@@ -90,18 +143,55 @@ h4 {
     font-weight: 500; /*Medium*/
 }
 
+h5 {
+    font-size: 25px;
+    font-weight: 400; /*Regular*/
+}
+
+h6 {
+    font-size: 18px;
+    font-weight: 400; /*Regular*/
+}
+
 p {
     font-family: var(--paragraph-font);
     color: var(--text-color-light);
     font-size: 20px;
-    font-weight: 400; /*Regular*/
+
 }
 
+.fliesstext-h1 {
+    font-size: 48px;
+    font-weight: 200; /*Extra-Light*/
+
+}
 
 main {
     background-color: var(--background-light);
     max-width: var(--global-max-width);
     margin: 0 auto;
+}
+
+.button-detail {
+    padding: 15px;
+    border: none;
+    border-radius: 30px;
+    background: var(--color-primary);
+    color: var(--color-primary-contrast);
+    font-family: var(--paragraph-font);
+    font-weight: 100;
+    font-size: 18px;
+}
+
+.button-detail:hover {
+    background-color: var(--color-primary-hover);
+}
+
+.linie-rot {
+    border: none;
+    height: 2px;
+    background-color: var(--color-primary);
+    margin: 20px 0;
 }
 
 form {
@@ -112,11 +202,24 @@ form {
 footer {
     background-color: var(--footer-light);
     padding: 20px 0;
+    color: var(--color-primary-contrast)!important;
+    font-family: var(--titel-font);
 
     .footer-content {
         display: flex;
+        flex-direction: row;
         justify-content: space-between;
-        max-width: var(--global-max-width);
+        align-items: center;
         margin: 0 auto;
+        max-width: var(--global-max-width);
     }
+}
+#toggle-theme {
+    padding: 15px;
+    border: none;
+    border-radius: 30px;
+    background: var(--background-dark);
+    color: var(--color-primary-contrast);
+    font-family: var(--paragraph-font);
+    font-size: 18px;
 }
