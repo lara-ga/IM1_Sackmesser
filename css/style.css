@@ -62,7 +62,7 @@ header {
     justify-content: space-between;
     align-items: center;
     gap: 20px;
-    padding: 20px;
+    padding: 40px;
     max-width: var(--global-max-width);
     margin: auto;
     font-family: var(--titel-font);
@@ -78,6 +78,17 @@ header {
         flex-direction: row;
         justify-content: center;
         gap: 20px;
+
+
+        li a {
+            color: var(--color-primary-contrast);
+            text-decoration: none;        /* Entfernt den Unterstrich */
+        }
+
+        li a:hover {
+            color: var(--text-color-muted);
+
+        }
     }
 }
 
@@ -95,14 +106,14 @@ header {
     }
 
     .hero-text {
-        flex: 1;
+        flex: 1; /*lässt das Flexelement wachsen & schrumpfen*/
         z-index: 1;
         display: block;
         margin-bottom: 0.5rem;
     }
 
     .hero-image {
-        flex 1;
+        flex: 1; /*lässt das Flexelement wachsen & schrumpfen*/
         z-index: 2;
         margin-left: -120px;
     }
@@ -190,6 +201,7 @@ main {
 .linie-rot {
     border: none;
     height: 2px;
+    height: 2px;
     background-color: var(--color-primary);
     margin: 20px 0;
 }
@@ -201,8 +213,8 @@ form {
 
 footer {
     background-color: var(--footer-light);
-    padding: 20px 0;
-    color: var(--color-primary-contrast)!important;
+    padding: 20px 40px;
+    color: var(--color-primary-contrast);
     font-family: var(--titel-font);
 
     .footer-content {
@@ -212,8 +224,19 @@ footer {
         align-items: center;
         margin: 0 auto;
         max-width: var(--global-max-width);
+
+
+        p, a {
+            color: var(--color-primary-contrast);
+            text-decoration: none;        /* Entfernt den Unterstrich */
+        }
+
+        a:hover {
+            color: var(--text-color-muted);
+        }
     }
 }
+
 #toggle-theme {
     padding: 15px;
     border: none;
