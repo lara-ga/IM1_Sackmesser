@@ -30,7 +30,7 @@
     --paragraph-font: "IBM Plex Sans", "Inter", sans-serif;
 
     /*Layout Breite*/
-    --global-max-width:1200px;
+    --global-max-width:80vw;
 }
 
 [data-theme="dark"] {
@@ -196,6 +196,39 @@ main {
 
 .button-detail:hover {
     background-color: var(--color-primary-hover);
+}
+
+.spezifikationen-banner {
+    background-color: var(--color-primary);
+    width: 100%;
+    padding: 50px 40px;
+
+    .spezifikationen-container {
+        max-width: var(--global-max-width);
+        margin: 0 auto;
+        display: flex;
+        justify-content: space-around; /* Verteilt die 3 Elemente gleichmässig */
+        align-items: center;
+        gap: 30px;
+        margin: 0 auto;
+        max-width: var(--global-max-width);
+
+        h2, h4 {
+            color: var(--color-primary-contrast);
+        }
+
+    }
+
+    .spezifikationen-text {
+        flex-direction: column;
+    }
+
+    .spezifikation-item {
+        display: flex;
+        flex-direction: column; /* Bringt Zahl und Text untereinander! */
+        align-items: center;     /* Zentriert beides horizontal */
+        text-align: center;
+    }
 }
 
 .linie-rot {
